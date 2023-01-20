@@ -1,0 +1,1045 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('inc/bootstrap.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lg-zoom.css');
+@import url('https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lg-thumbnail.css');
+
+@font-face {
+    font-family: "Batusa";
+    src: url("font/Batusa.woff");
+}
+
+@font-face {
+    font-family: "Cotta";
+    src: url("font/cotta.otf");
+}
+
+@font-face {
+    font-family: "RoyalWedding";
+    src: url("font/Royal-Wedding-Regular.otf");
+}
+
+:root {
+    --rgb-primary: 160, 140, 123;
+    --rgb-secondary: 255, 255, 255;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin-bottom: 0;
+}
+
+hr {
+    margin: 0;
+    opacity: 1;
+}
+
+.display-hide {
+    display: none;
+}
+
+.btn-volume {
+    position: fixed !important;
+    bottom: 30px !important;
+    left: 20px;
+    background: #fff;
+    color: #666;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    line-height: 0;
+    transition: left 1s;
+    -webkit-transition: left 1s;
+}
+
+.btn {
+    font-family: 'Playfair Display', serif;
+}
+
+.primary-pane {
+    overflow: hidden;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url(../img/primary-pane.jpg);
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 61%;
+}
+
+.secondary-pane {
+    position: static;
+    right: 0;
+    background: var(--white);
+    width: 39%;
+    margin-left: auto;
+}
+
+section.top-cover {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 1;
+    transition: all 1.8s;
+    transition-timing-function: cubic-bezier(.23, .56, .38, .78);
+    -webkit-transition-timing-function: cubic-bezier(.23, .56, .38, .78);
+    -moz-transition-timing-function: cubic-bezier(.23, .56, .38, .78);
+    -o-transition-timing-function: cubic-bezier(.23, .56, .38, .78);
+}
+
+.top-cover.hide {
+    top: -120%;
+    pointer-events: none;
+}
+
+.top-cover>.inner {
+    position: static;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url(../img/cover.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 39%;
+    height: 100vh;
+    right: 0;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 120px;
+    text-align: center;
+}
+
+.top-cover>.inner p {
+    font-size: 16px;
+    color: #fff;
+    font-family: Batusa;
+    font-weight: 500;
+}
+
+.top-cover>.inner h2 {
+    font-size: 18px;
+    color: #fff;
+    font-family: Batusa;
+    font-weight: 500;
+}
+
+.top-cover>.inner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #fff;
+}
+
+@media only screen and (max-width: 960px) {
+    .primary-pane {
+        position: relative;
+        width: 100%;
+        display: none;
+    }
+
+    .secondary-pane {
+        position: relative;
+        width: 100%;
+    }
+
+    .top-cover>.inner {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.divi-title {
+    position: relative;
+    overflow: hiden;
+    width: 100%;
+}
+
+.divi-title-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    text-align: center;
+    color: #666;
+    opacity: 0.1;
+}
+
+.divi-title-body {
+    position: absolute;
+    padding-top: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.divi-title-body h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.divi-title-body h2 {
+    font-family: RoyalWedding;
+    font-size: 60px;
+    margin-left: -39px;
+    color: #666;
+}
+
+.divi-title-white {
+    position: relative;
+    overflow: hiden;
+    width: 100%;
+}
+
+.divi-title-header-white {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    opacity: 0.1;
+}
+
+.divi-title-body-white {
+    position: absolute;
+    padding-top: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.divi-title-body-white h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.divi-title-body-white h2 {
+    font-family: RoyalWedding;
+    font-size: 60px;
+    margin-left: -39px;
+    color: rgba(255,255,255,0.83);
+}
+
+/* -------------------- section content -------------------- */
+
+.header {
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(180deg,rgba(255,255,255,0) 66%,var(--primary) 100%),url(../img/header.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.header-inner {
+    height: 100vh;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.header-title {
+    padding: 30px 0;
+}
+
+.header-title p {
+    font-family: Cotta;
+    font-size: 16px;
+    color: #fff;
+}
+
+.header-title h2 {
+    font-family: Cotta;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.header-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    color: #fff;
+    margin-top: 1.5rem;
+}
+
+.header-title hr {
+    border-top: 2px solid #fff;
+    width: 50px;
+    margin: 16px auto 16px auto;
+}
+
+/* ---------------------------------------- */
+
+.about {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    background-color: var(--primary);
+    border-bottom-width: 8px;
+    border-bottom-style: double;
+    border-bottom-color: #FFFFFF;
+}
+
+.about p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+
+.about .primary-about .about-img {
+    border-radius: 0 30px 0 0;
+    width: 100%;
+    height: 450px;
+    background-image: url(../img/about-01.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.about .primary-about .card {
+    background-color: #FFFFFF;
+    border-radius: 0 0 0 30px;
+    overflow: hidden;
+    border-width: 8px 0px 0px 0px;
+    border-style: double;
+    border-top-color: var(--primary);
+}
+
+.about .primary-about .card hr {
+    border:0;
+    border-top: 6px double var(--primary);
+    max-width: 45px;
+    margin: 16px auto 30px auto;
+    transform-origin: center;
+}
+
+.about .primary-about .card p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.about .secondary-about .about-img {
+    border-radius: 0 30px 0 0;
+    width: 100%;
+    height: 450px;
+    background-image: url(../img/about-02.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.about .secondary-about .card {
+    background-color: #FFFFFF;
+    border-radius: 0 0 0 30px;
+    overflow: hidden;
+    border-width: 8px 0px 0px 0px;
+    border-style: double;
+    border-top-color: var(--primary);
+}
+
+.about .secondary-about .card hr {
+    border:0;
+    border-top: 6px double var(--primary);
+    max-width: 45px;
+    margin: 16px auto 30px auto;
+    transform-origin: center;
+}
+
+.about .secondary-about .card p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+/* ---------------------------------------- */
+
+.story {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 2rem 0;
+    border-bottom-width: 8px;
+    border-bottom-style: double;
+    border-bottom-color: var(--primary);
+}
+
+.story .story-img-first {
+    width: 100%;
+    height: 235px;
+    border-radius: 15px;
+    background-image: url(../img/story-01.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.story .story-img-second {
+    width: 100%;
+    height: 235px;
+    border-radius: 15px;
+    background-image: url(../img/story-02.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    margin-left: -1.5px;
+    background-color: var(--primary);
+}
+
+.timeline>.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline>.timeline-item:after,
+.timeline>.timeline-item:before {
+    content: " ";
+    display: table;
+}
+
+.timeline>.timeline-item:after {
+    clear: both;
+}
+
+.timeline>.timeline-item>.timeline-panel {
+    float: left;
+    position: relative;
+    width: 46%;
+    padding: 16px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 12px 22px -6px rgb(57 61 67 / 15%);
+}
+
+.timeline>.timeline-item>.timeline-badge {
+    z-index: 10;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    border-radius: 50% 50% 50% 50%;
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 50px;
+    color: #fff;
+    overflow: hidden;
+    background-color: var(--primary);
+}
+
+.timeline>.timeline-item.timeline-inverted>.timeline-panel {
+    float: right;
+}
+
+.timeline>.timeline-item.timeline-inverted>.timeline-panel:before {
+    right: auto;
+    left: -8px;
+    border-right-width: 8px;
+    border-left-width: 0;
+}
+
+.timeline>.timeline-item.timeline-inverted>.timeline-panel:after {
+    right: auto;
+    left: -7px;
+    border-right-width: 7px;
+    border-left-width: 0;
+}
+
+.timeline-title {
+    margin-top: 0;
+    color: inherit;
+    font-weight: 400;
+}
+
+.timeline-body>p,
+.timeline-body>ul {
+    margin-bottom: 0;
+}
+
+.timeline-left:before {
+    left: 30px;
+}
+
+.timeline-left>.timeline-item>.timeline-badge {
+    left: 30px;
+    top: 10px;
+}
+
+.timeline-left>.timeline-item>.timeline-panel {
+    width: calc(100% - 70px);
+}
+
+.timeline-body h5 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.timeline-body p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ---------------------------------------- */
+
+.couple {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+.couple img {
+    width: 185px;
+}
+
+.couple .couple-detail h1 {
+    font-family: RoyalWedding;
+    font-size: 70px;
+    color: #666;
+}
+
+.couple .couple-detail h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.couple .couple-detail h3 {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 42px;
+    color: #666;
+}
+
+.couple .couple-detail p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 16px;
+    color: #666;
+}
+
+/* ---------------------------------------- */
+.wedding-date {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    background-color: var(--primary);
+    border-bottom-width: 8px;
+    border-bottom-style: double;
+    border-bottom-color: #FFFFFF;
+}
+
+.wedding-date .card {
+    border: 0;
+    background-color: #fff;
+}
+
+.wedding-date .primary-date{
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.86) 0%,rgba(255,255,255,0.86) 100%),url(../img/date-01.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.wedding-date .secondary-date{
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.86) 0%,rgba(255,255,255,0.86) 100%),url(../img/date-02.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.wedding-date-detail {
+    text-align: center;
+}
+
+.wedding-date-detail p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.wedding-date-detail h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ---------------------------------------- */
+
+.countdown {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    background-color: var(--primary);
+    text-align: center;
+    border-bottom-width: 8px;
+    border-bottom-style: double;
+    border-bottom-color: #FFFFFF;
+}
+
+.countdown h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+}
+
+.countdown .value span {
+    font-size: 25px;
+    color: #fff;
+}
+
+.countdown .label {
+    font-size: 14px;
+    color: #fff;
+}
+
+.countdown .countdown-img {
+    border-radius: 0 30px 0 0;
+    width: 100%;
+    height: 450px;
+    background-image: url(../img/about-02.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.countdown .card {
+    background-color: #FFFFFF;
+    border-radius: 0 0 0 30px;
+    overflow: hidden;
+    border-width: 8px 0px 0px 0px;
+    border-style: double;
+    border-top-color: var(--primary);
+}
+
+/* ---------------------------------------- */
+
+.filter-ig {
+    position: relative;
+    overflow: hidden;
+    padding-top: 200px;
+    padding-bottom: 32px;
+    background-image: url(../img/filter.jpg);
+    background-size: cover;
+    background-position: center;;
+}
+
+.filter-ig .divi-title-header-white {
+    font-size: 2.5rem;
+}
+
+.filter-ig .card{
+    background-color: rgba(var(--rgb-primary),0.8);
+    border: 0;
+}
+
+.filter-ig p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+/* ---------------------------------------- */
+.group-spiner label {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.group-spiner .form-spiner {
+    text-align: center;
+}
+
+.group-spiner .form-spiner:disabled {
+    background-color: var(--white);
+    opacity: 1;
+}
+
+.rsvp {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary);
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.rsvp p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+}
+
+/* .rsvp .text-muted {
+    color: #fff !important;
+} */
+
+.rsvp .card {
+    border: 1px solid #666;
+    text-align: center;
+}
+
+.rsvp .card i {
+    font-size: 28px;
+    color: #666;
+}
+
+.rsvp .card h4 {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 18px;
+    color: #666;
+}
+
+/* ---------------------------------------- */
+
+.wedding-gift {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary);
+    padding-top: 15px;
+    padding-bottom: 30px;
+    text-align: center;
+    border-bottom-width: 8px;
+    border-bottom-style: double;
+    border-bottom-color: var(--primary);
+}
+
+.wedding-gift p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 14px;
+    color: #666;
+}
+
+.wedding-gift .card {
+    overflow: hidden;
+    background-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666;
+}
+
+
+
+/* ---------------------------------------- */
+
+.gallery-wedding {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.wedding-video {
+    position: relative;
+    overflow: hidden;
+}
+
+.wedding-video .box-video {
+    width: 100%;
+    overflow: hidden;
+}
+
+.wedding-video .box-video video {
+    width: 100%;
+}
+
+.wedding-video .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    text-align: center;
+}
+
+.wedding-video .content h1 {
+    font-family: Batusa;
+    font-weight: 500;
+    color: #fff;
+    font-size: 22px;
+}
+
+/* ---------------------------------------- */
+.wishes {
+    position: relative;
+    background-color: var(--primary);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom-width: 9px;
+    border-bottom-style: double;
+    border-bottom-color: #FFFFFF;
+}
+
+.wishes .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.wishes .card .card-body {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.wishes .card .card-body p {
+    font-family: Batusa;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+}
+
+.wishes .comment {
+    overflow: scroll;
+    overflow-x: hidden;
+    margin: 32px 0;
+    max-height: 80vh;
+}
+
+.wishes .comment .list-group-item {
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+    background-color: transparent;
+    border: 0px;
+    margin-bottom: 12px;
+}
+
+.wishes .comment .list-group-item h5 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.wishes .comment .list-group-item p {
+    font-size: 14px;
+}
+
+.wishes .comment .list-group-item small {
+    font-size: 10px;
+    align-self: center !important;
+}
+
+.wishes .closing {
+    text-align: center;
+}
+
+.wishes .closing h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #fff;
+}
+
+.wishes .closing p {
+    font-family: Cotta;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* ---------------------------------------- */
+
+.page-footer {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 12px 0;
+}
+
+.page-footer img {
+    height: 30px;
+}
+
+.page-footer p {
+    font-size: 12px;
+}
+
+/* -----------------notification----------------------- */
+
+.imaged.w24 {
+    width: 24px !important;
+}
+
+.notification-box {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: 0.3s all;
+    margin-top: env(safe-area-inset-top);
+}
+
+.notification-box.show {
+    top: 0;
+}
+
+.notification-dialog.android-style {
+    background: #ffffff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px 16px;
+}
+
+.notification-dialog.android-style .notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-dialog.android-style .notification-header .in {
+    display: flex;
+    align-items: center;
+}
+
+.notification-dialog.android-style .notification-header .in .imaged {
+    margin-right: 8px;
+}
+
+.notification-dialog.android-style .notification-header .in strong {
+    font-size: 13px;
+    font-weight: 400;
+    color: #141515;
+}
+
+.notification-dialog.android-style .notification-header .in span {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 6px;
+    font-size: 11px;
+}
+
+.notification-dialog.android-style .notification-header .in span:before {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 6px;
+    content: "•";
+}
+
+.notification-dialog.android-style .notification-header .close-button {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #A1A1A2;
+}
+
+.notification-dialog.android-style .notification-header .close-button:hover,
+.notification-dialog.android-style .notification-header .close-button:active {
+    color: #4F5050;
+}
+
+.notification-dialog.android-style .notification-content {
+    font-size: 13px;
+    line-height: 1.4em;
+    margin-top: 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.notification-dialog.android-style .notification-content .subtitle {
+    font-size: 15px;
+    margin: 0 0 5px 0;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.notification-dialog.android-style .notification-content .in {
+    padding-right: 16px;
+}
+
+.notification-dialog.android-style .icon-box {
+    width: 46px;
+    height: 46px;
+    font-size: 46px;
+    color: #A1A1A2;
+}
+
+.notification-dialog.android-style .notification-footer {
+    border-top: 1px solid #E1E1E1;
+    margin: 16px -16px -16px -16px;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.notification-dialog.android-style .notification-footer .notification-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #A87C50 !important;
+    font-size: 13px;
+    border-right: 1px solid #E1E1E1;
+    padding: 16px 6px;
+}
+
+.notification-dialog.android-style .notification-footer .notification-button i.icon,
+.notification-dialog.android-style .notification-footer .notification-button ion-icon {
+    font-size: 20px;
+    line-height: 1em;
+    margin-right: 8px;
+}
+
+.notification-dialog.android-style .notification-footer .notification-button:last-child {
+    border-right: 0;
+}
+
+.notification-dialog.android-style .notification-footer .notification-button:hover,
+.notification-dialog.android-style .notification-footer .notification-button:active {
+    color: #976f48;
+    background: rgba(225, 225, 225, 0.3);
+}
